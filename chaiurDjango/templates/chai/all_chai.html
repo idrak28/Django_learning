@@ -6,4 +6,42 @@ All chai page
 
 {% block content %}
 <h1>Chai aur Code | Home Page </h1>
+<div class="grid grid-cols-3 gap-5 m-5 ">
+{% for  chai in chais   %}
+ <div class="bg-blue-950 p-10 rounded-xl"> 
+  <img class="rounded size-2/3" src="{{chai.image.url}}" alt="">
+  <h3 class="text-2xl font-bold">{{chai.name}}</h3>
+ <a href="{% url 'chai_details' chai.id %}">
+
+<button type="button" class= " inline-flex items-center justify-center ">
+    
+
+{{chai.type}} - {{chai.id}}
+
+
+</button>
+
+
+
+
+ </a>
+
+    
+
+
+
+
+
+
+
+
+ </div>
+
+
+{% endfor %}
+
+</div>
+
 {% endblock %}
+
+
