@@ -20,7 +20,15 @@ rel="stylesheet">
     <!-- start new HTML... -->
     {% if user.is_authenticated %}
     <p>Hi {{ user.username }}!</p>
-    <p><a href="{% url 'logout' %}">Log out</a></p>
+    
+    <form method="post" action="{% url 'logout' %}">
+        {% csrf_token %}
+        <button type="submit">logout</button>
+    </form>
+
+
+
+
     {% else %}
     <p>You are not logged in.</p>
     <a href="{% url 'login' %}">Log In</a> |
